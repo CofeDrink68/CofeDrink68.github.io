@@ -1,4 +1,5 @@
 function initCanvas(context, h, w) {
+	context.clearRect(0, 0, w, h)
 	context.fillStyle = "#ececec";
 	//context.fillStyle="#fff";
 	context.fillRect(0, 0, w, h);
@@ -10,12 +11,13 @@ var simIndex = 0;
 
 function showDisque() {
 	for(var _it=0;_it<it;_it++) {
-		setTimeout(iterDique(_it), _it*(1/itspeed))
+		setTimeout(iterDique(_it), 1000*(_it*(1/itspeed)));
 	}
+	console.log(1/itspeed);
 }
 
 function iterDique(iteration) {
-
+	console.log(iteration);
 }
 
 function showTrajectoire() {
@@ -41,4 +43,8 @@ function FstopSimulation() {
 
 function FselectSimulation(index) {
 	simIndex = index;
+}
+
+function showMarker(x, y) {
+	context.line
 }

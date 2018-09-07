@@ -40,6 +40,11 @@
 	font-size: 0.9vw;
 }
 
+#iterPrint {
+	position: relative;
+	left: 10%;
+}
+
 .SimControl {
 	height: 2%;
 	width: 30%
@@ -57,11 +62,12 @@ h1 {
 	position: relative;
 	bottom: 574px;
 	left: 850px;
+	width: 20%;
 }
 
 .slider {
     -webkit-appearance: none;
-    width: 20%;
+    width: 100%;
     height: 15px;
     border-radius: 5px;  
     background: #d3d3d3;
