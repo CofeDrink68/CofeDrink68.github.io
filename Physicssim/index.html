@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Physicssim</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body id="background">
+		<script src="script.js"></script> 
+        <center><h1 id="title">Bienvenue sur mon Simulateur de Physique</h1></center>
+		<center><canvas id="canvas"></canvas></center>
+		<div id="form">
+			<form name="typeSel" action="" method="GET" onchange="formChange(this)">Le type de simulation : <BR>
+				<input type="radio" name="type" value="0">Simuler un disque<br> <!-- 0 is the Disque index-->
+				<input type="radio" name="type" value="1">Simuler une trajectoire<br> <!-- 1 is the Trajec index-->
+				<input type="radio" name="type" value="2">Simuler une roue<br> <!-- 2 is th Wheel index-->
+			</form>
+		</div>
+		<div id="startStopIter">
+			<button id="StartSimButton" class="SimControl" onClick="FstartSimulation();">Start</button>
+			<button id="StopSimButton" class="SimControl" onclick="FstopSimulation();">Stop</button>
+			<input id="SimIterIn" class="SimControl" onchange="iterChange(this);" placeholder="Nombre D'iteration"/>
+		</div>
+		<div id="iterSpeed">
+			<div id="iterPrint">2 Hz</div>
+			<input id="iterBar" class="slider" min="0.5" max="25" value="2" type="range" oninput="itersChange(this)"/>
+		</div>
+		<script>
+			var cnvs = document.getElementById("canvas");
+			var context = cnvs.getContext("2d");
+
+			var iterPrint = document.getElementById("iterPrint");
+
+			var w = cnvs.width;
+			var h = cnvs.height;
+			initCanvas(context, h, w)
+
+			var it = 0;
+			var itspeed = 2;
+			itersChange(document.getElementById("iterBar"));
+
+			function iterChange(input) {
+				it=parseInt(input.value)
+				console.log(it);
+			}
+			
+			function formChange(form) {
+				var value = parseInt(form.type.value);
+				console.log(value);
+				initCanvas(context, h, w);
+				FselectSimulation(value);
+			}
+
+			function itersChange(element) {
+				iterPrint.innerText = element.value+" Hz";
+				itspeed = element.value;
+			}
+			</script>
+    </body>
+</html>

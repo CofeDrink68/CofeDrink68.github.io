@@ -1,0 +1,90 @@
+#background {
+	background-color: #e6e6e6
+}
+
+#canvas {
+	height: 75%;
+	width: 75%
+}
+
+#form {
+	position: relative;
+	left: 35%;
+	border-right: 2px solid rgb(65, 65, 65);
+	width: 15%;
+}
+
+#startStopIter {
+	position: relative;
+	left: 55%;
+	width: 35%;
+	bottom: 73px;
+}
+
+#StartSimButton {
+	/* Nothing planed here */
+	font-size: 0.9vw;
+}
+
+#StopSimButton {
+	position: relative;
+	top: 30px;
+	right: 30.7%;
+	font-size: 0.9vw;
+}
+
+#SimIterIn {
+	position: relative;
+	top: 60px;
+	right: 61.7%;
+	font-size: 0.9vw;
+}
+
+.SimControl {
+	height: 2%;
+	width: 30%
+}
+
+h1 {
+	font-size: 2vw;
+}
+
+*{
+	font-size: 1vw;
+}
+
+#iterSpeed {
+	position: relative;
+	bottom: 574px;
+	left: 850px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 20%;
+    height: 15px;
+    border-radius: 5px;  
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
