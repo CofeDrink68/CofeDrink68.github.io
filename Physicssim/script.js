@@ -10,14 +10,18 @@ var stopSimulation = false;
 var simIndex = 0;
 
 function showDisque() {
-	for(var _it=0;_it<it;_it++) {
-		setTimeout(iterDique(_it), 1000*(_it*(1/itspeed)));
-	}
-	console.log(1/itspeed);
+	iterDisque(0)
+	//console.log(1/itspeed);
 }
 
-function iterDique(iteration) {
-	console.log(iteration);
+function iterDisque(iteration) {
+	if(!stopSimulation) {
+		console.log(iteration);
+		iterIndexDiv.innerText = iteration;
+		if(iteration<it) {
+			setTimeout(function(){iterDisque(iteration+1);}, 1000*(1/itspeed));
+		}
+	}
 }
 
 function showTrajectoire() {
@@ -39,6 +43,7 @@ function FstartSimulation() {
 function FstopSimulation() {
 	stopSimulation = true;
 	console.log("Stopping simulation")
+	iterIndexDiv.innerText = "0";
 }
 
 function FselectSimulation(index) {

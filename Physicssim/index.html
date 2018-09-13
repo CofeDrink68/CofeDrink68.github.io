@@ -24,11 +24,15 @@
 			<div id="iterPrint">2 Hz</div>
 			<input id="iterBar" class="slider" min="0.5" max="25" value="2" type="range" oninput="itersChange(this)"/>
 		</div>
+		<div id="iterIndex">
+			0
+		</div>
 		<script>
 			var cnvs = document.getElementById("canvas");
 			var context = cnvs.getContext("2d");
 
 			var iterPrint = document.getElementById("iterPrint");
+			var iterIndexDiv = document.getElementById("iterIndex");
 
 			var w = cnvs.width;
 			var h = cnvs.height;
